@@ -1,14 +1,8 @@
 //{ Driver Code Starts
-//Initial Template for C++
-
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
-
-
 // } Driver Code Ends
-//User function Template for C++
-
 class Solution {
 public:
     void fun(int i,int j,int s,vector<vector<char>> &ma,string w,bool &f,int n,int m,vector<vector<int>> &vi)
@@ -33,8 +27,8 @@ public:
         vi[i][j]=0;
         
     }
-    bool wordSearch(vector<vector<char>>& ma, string w) {
-        //code here
+    bool isWordExist(vector<vector<char>>& ma, string w) {
+        // Code here
         int s=0;
         bool f=false;
         int n=ma.size();
@@ -52,33 +46,29 @@ public:
         
         return f;
         
+        
     }
-
 };
 
 //{ Driver Code Starts.
-int main()
-{
-    int t;
-    cin>>t;
-    while(t--)
-    {
-        int n,m;
-        cin>>n>>m;
-        vector<vector<char>> mat(n,vector<char>(m));
-        for(int i=0;i<n;i++)
-        {
-            for(int j=0;j<m;j++)
-            {
-                cin>>mat[i][j];
-            }
-        }
-        string str; cin>>str;
-        Solution ob;
-        auto ans=ob.wordSearch(mat,str);
-        cout<<ans<<"\n";
-    }
-    return 0;
+int main(){
+	int tc;
+	cin >> tc;
+	while(tc--){
+		int n, m;
+		cin >> n >> m;
+		vector<vector<char>>board(n, vector<char>(m, '*'));
+		for(int i = 0; i < n; i++)
+			for(int j = 0; j < m; j++)
+				cin >> board[i][j];
+		string word;
+		cin >> word;
+		Solution obj;
+		bool ans = obj.isWordExist(board, word);
+		if(ans)
+			cout << "1\n";
+		else cout << "0\n";
+	}
+	return 0;
 }
-
 // } Driver Code Ends
