@@ -8,25 +8,26 @@ class Solution{
     public:
     //You need to complete this fucntion
     
-    long long power(int n,int r)
+    long long power(int a,int p)
     {
-       //Your code herelong lo
-       long long int m=1e9+7;
-       long long a=1;
-       while(r)
+       //Your code here
+       long long m=1e9+7;
+       long long ans=1;
+       while(p)
        {
-           if(r%2==0)
+           if(p%2==0)
            {
-               r=r/2;
-               n=((n%m)*(n%m))%m;
+               a=(a%m*a%m)%m;
+               p=p/2;
            }
            else
            {
-               r--;
-               a=((a%m)*(n%m))%m;
+               p--;
+               ans=(ans%m*a%m)%m;
            }
        }
-       return a%m;
+       return ans;
+       
         
     }
 
